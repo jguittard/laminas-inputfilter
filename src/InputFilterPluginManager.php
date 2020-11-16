@@ -35,6 +35,7 @@ class InputFilterPluginManager extends AbstractPluginManager
         'optionalinputfilter' => OptionalInputFilter::class,
         'optionalInputFilter' => OptionalInputFilter::class,
         'OptionalInputFilter' => OptionalInputFilter::class,
+        'base64fileinput'     => Base64FileInput::class,
 
         // Legacy Zend Framework aliases
         \Zend\InputFilter\InputFilter::class => InputFilter::class,
@@ -56,6 +57,7 @@ class InputFilterPluginManager extends AbstractPluginManager
         InputFilter::class                      => InvokableFactory::class,
         CollectionInputFilter::class            => InvokableFactory::class,
         OptionalInputFilter::class              => InvokableFactory::class,
+        Base64FileInput::class                  => Base64FileInputFactory::class,
         // v2 canonical FQCN
         'laminasinputfilterinputfilter'            => InvokableFactory::class,
         'laminasinputfiltercollectioninputfilter'  => InvokableFactory::class,

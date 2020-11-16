@@ -39,11 +39,13 @@ class FileInput extends Input
      */
     protected $autoPrependUploadValidator = true;
 
-    /** @var FileInput\FileInputDecoratorInterface */
-    private $implementation;
+    /**
+     * @var FileInput\FileInputDecoratorInterface
+     */
+    protected $implementation;
 
     /**
-     * @param array|UploadedFile $value
+     * @param array|UploadedFileInterface $value
      *
      * @return Input
      */
@@ -179,7 +181,7 @@ class FileInput extends Input
      * @param mixed $value
      * @return FileInput\FileInputDecoratorInterface
      */
-    private function createDecoratorImplementation($value)
+    protected function createDecoratorImplementation($value)
     {
         // Single PSR-7 instance
         if ($value instanceof UploadedFileInterface) {

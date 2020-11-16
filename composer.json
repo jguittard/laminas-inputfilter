@@ -30,7 +30,8 @@
         "laminas/laminas-servicemanager": "^3.3.1",
         "laminas/laminas-stdlib": "^3.0",
         "laminas/laminas-validator": "^2.11",
-        "laminas/laminas-zendframework-bridge": "^1.0"
+        "laminas/laminas-zendframework-bridge": "^1.0",
+        "psr/http-factory": "^1.0"
     },
     "require-dev": {
         "laminas/laminas-coding-standard": "~1.0.0",
