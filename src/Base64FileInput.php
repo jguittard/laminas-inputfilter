@@ -53,12 +53,17 @@ class Base64FileInput extends FileInput
      */
     private function decodeValue($value)
     {
+        if (null === $value) {
+            return null;
+        }
+
         if (! is_string($value) || null === ($mediaType = self::matchMediaType($value))) {
-            throw new Exception\InvalidArgumentException('Provided value is not base64 encoded');
+            throw new Exception\InvalidArgumentException('Provided value is not base64 encoded'); //TODO ?
         }
 
         $fileName = tempnam(sys_get_temp_dir(), 'file_');
         $file = fopen($fileName, 'wb');
+        //TODO: check $file is resource, not boolean FALSE
         $data = explode(',', $value);
         fwrite($file, base64_decode($data[1]));
 
